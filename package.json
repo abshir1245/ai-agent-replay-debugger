@@ -1,0 +1,17 @@
+{
+  "name": "agent-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w @agent-replay/api",
+    "db:seed": "npm run db:seed -w @agent-replay/api"
+  },
+  "devDependencies": { "typescript": "^5.9.2" },
+  "engines": { "node": ">=22" }
+}
